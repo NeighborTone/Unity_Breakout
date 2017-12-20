@@ -17,8 +17,8 @@ public class BlockMap : MonoBehaviour
         //Vector3 placePosition = new Vector3(-10, 0, 0);
 
         Vector3 placePosition = new Vector3(
-          topWall.position.x - topWall.localScale.x / 2 + blockPrefab.transform.localScale.x / 2,
-          topWall.position.y - topWall.localScale.y / 2 - blockPrefab.transform.localScale.y /2 -1 ,
+          topWall.position.x - topWall.localScale.x / 2 + blockPrefab.transform.localScale.x /  2,
+          topWall.position.y - topWall.localScale.y / 2 - blockPrefab.transform.localScale.y /2 -1,
           0);
 
         //配置する回転角を設定
@@ -31,12 +31,6 @@ public class BlockMap : MonoBehaviour
         localscale.y = totalDepth / placeY;
         blockPrefab.transform.localScale = localscale;
 
-        ////配置
-        //for (int i = 0; i < placeX; i++)
-        //    {
-        //        Instantiate(blockPrefab, placePosition, q);
-        //        placePosition.x += blockPrefab.transform.localScale.x + 1;
-        //    }
         //配置
         for (int i = 0; i < placeY; i++)
         {
