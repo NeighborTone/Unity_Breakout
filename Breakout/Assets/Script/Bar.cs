@@ -15,11 +15,11 @@ public class Bar : MonoBehaviour
        
         if(Input.GetKey(KeyCode.RightArrow) && transform.position.x <= 10)
         {
-            transform.position += new Vector3(20.0f, 0.0f, 0.0f) * Time.deltaTime;
+            transform.position += new Vector3(23.0f, 0.0f, 0.0f) * Time.deltaTime;
         }
         if (Input.GetKey(KeyCode.LeftArrow) && transform.position.x >= -10)
         {
-            transform.position += new Vector3(-20.0f, 0.0f, 0.0f) * Time.deltaTime;
+            transform.position += new Vector3(-23.0f, 0.0f, 0.0f) * Time.deltaTime;
         }
     }
 }
