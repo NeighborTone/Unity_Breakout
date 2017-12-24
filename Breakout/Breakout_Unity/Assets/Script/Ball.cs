@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class Ball : MonoBehaviour
 {
@@ -87,14 +88,14 @@ public class Ball : MonoBehaviour
         else if (Mathf.Abs(this.GetComponent<Rigidbody>().velocity.x) < 3 && gameClear != true)
         {
             this.GetComponent<Rigidbody>().AddForce(
-            (transform.right + transform.up) * 6,
+            (transform.right + transform.up) * 3,
             ForceMode.VelocityChange);
         }
 
         else if (Mathf.Abs(this.GetComponent<Rigidbody>().velocity.y) < 3 && gameClear != true)
         {
             this.GetComponent<Rigidbody>().AddForce(
-            (transform.right + transform.up) * 6,
+            (transform.right + transform.up) * 3,
             ForceMode.VelocityChange);
         }
         
@@ -114,7 +115,11 @@ public class Ball : MonoBehaviour
         }
         if(gameOver)
         {
-            GUI.Label(new Rect(0, 0, Screen.width, Screen.height), "GameOver", gui_gameOver);
+            GUI.Label(new Rect(0, 0, Screen.width, Screen.height), "GameOver:Retry? \"Z\"", gui_gameOver);
+            if (Input.GetKey(KeyCode.Z))
+            {
+                SceneManager.LoadScene("Title");
+            }
         }
     }
 }
